@@ -1,16 +1,17 @@
 package id.ac.polbeng.depandi.sportappmade.ui.sport
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.android.material.snackbar.Snackbar
 import id.ac.polbeng.depandi.sportappmade.R
 import id.ac.polbeng.depandi.sportappmade.core.data.Resource
 import id.ac.polbeng.depandi.sportappmade.core.domain.model.Sport
 import id.ac.polbeng.depandi.sportappmade.databinding.FragmentSportBinding
+import id.ac.polbeng.depandi.sportappmade.ui.detail_sport.DetailSportActivity
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class SportFragment : Fragment(), SportFragmentCallback {
@@ -84,6 +85,8 @@ class SportFragment : Fragment(), SportFragmentCallback {
     }
 
     override fun onItemClick(sport: Sport) {
-        Snackbar.make(binding.root, "You have click ${sport.strSport}", Snackbar.LENGTH_SHORT).show()
+        val intent = Intent(activity, DetailSportActivity::class.java)
+        intent.putExtra(DetailSportActivity.EXTRA_DATA, sport)
+        startActivity(intent)
     }
 }

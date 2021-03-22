@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SportAppMADE">
         <activity
+            android:name=".ui.detail_sport.DetailSportActivity"
+            android:theme="@style/Theme.SportAppMADE.NoActionBar"/>
+        <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/Theme.SportAppMADE.NoActionBar">
