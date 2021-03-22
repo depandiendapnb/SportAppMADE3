@@ -9,18 +9,17 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import id.ac.polbeng.depandi.sportappmade.R
+import org.koin.android.viewmodel.ext.android.viewModel
 
 class PlayerFragment : Fragment() {
 
-    private lateinit var playerViewModel: PlayerViewModel
+    private val playerViewModel: PlayerViewModel by viewModel()
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        playerViewModel =
-                ViewModelProvider(this).get(PlayerViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_player, container, false)
         val textView: TextView = root.findViewById(R.id.text_gallery)
         playerViewModel.text.observe(viewLifecycleOwner, Observer {
