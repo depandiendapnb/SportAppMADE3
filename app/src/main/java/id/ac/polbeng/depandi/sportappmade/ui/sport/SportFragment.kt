@@ -1,4 +1,4 @@
-package id.ac.polbeng.depandi.sportappmade.ui.home
+package id.ac.polbeng.depandi.sportappmade.ui.sport
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import id.ac.polbeng.depandi.sportappmade.R
 
-class HomeFragment : Fragment() {
+class SportFragment : Fragment() {
 
-    private lateinit var homeViewModel: HomeViewModel
+    private lateinit var sportViewModel: SportViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        homeViewModel =
-                ViewModelProvider(this).get(HomeViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_home, container, false)
+        sportViewModel =
+                ViewModelProvider(this).get(SportViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_sport, container, false)
         val textView: TextView = root.findViewById(R.id.text_home)
-        homeViewModel.text.observe(viewLifecycleOwner, Observer {
+        sportViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

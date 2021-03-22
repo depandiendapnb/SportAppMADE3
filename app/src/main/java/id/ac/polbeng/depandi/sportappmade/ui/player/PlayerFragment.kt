@@ -1,4 +1,4 @@
-package id.ac.polbeng.depandi.sportappmade.ui.gallery
+package id.ac.polbeng.depandi.sportappmade.ui.player
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import id.ac.polbeng.depandi.sportappmade.R
 
-class GalleryFragment : Fragment() {
+class PlayerFragment : Fragment() {
 
-    private lateinit var galleryViewModel: GalleryViewModel
+    private lateinit var playerViewModel: PlayerViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        galleryViewModel =
-                ViewModelProvider(this).get(GalleryViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_gallery, container, false)
+        playerViewModel =
+                ViewModelProvider(this).get(PlayerViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_player, container, false)
         val textView: TextView = root.findViewById(R.id.text_gallery)
-        galleryViewModel.text.observe(viewLifecycleOwner, Observer {
+        playerViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root
