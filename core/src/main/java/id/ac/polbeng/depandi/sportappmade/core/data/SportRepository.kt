@@ -4,6 +4,7 @@ import id.ac.polbeng.depandi.sportappmade.core.data.source.local.LocalDataSource
 import id.ac.polbeng.depandi.sportappmade.core.data.source.remote.RemoteDataSource
 import id.ac.polbeng.depandi.sportappmade.core.data.source.remote.network.ApiResponse
 import id.ac.polbeng.depandi.sportappmade.core.data.source.remote.response.SportResponse
+import id.ac.polbeng.depandi.sportappmade.core.domain.model.Player
 import id.ac.polbeng.depandi.sportappmade.core.domain.model.Sport
 import id.ac.polbeng.depandi.sportappmade.core.domain.repository.ISportRepository
 import id.ac.polbeng.depandi.sportappmade.core.utils.AppExecutors
@@ -37,4 +38,19 @@ class SportRepository(
                 localDataSource.insertListSport(sportList)
             }
         }.asFlow()
+
+    override fun getAllFavoritePlayer(): Flow<List<Player>> =
+            localDataSource.getAllFavoritePlayer().map {
+                DataMapper.mapPlayerEntitiesToDomain(it)
+            }
+
+    override suspend fun insertFavoritePlayer(player: Player) {
+        val playerEntity = DataMapper.mapPlayerDomainToEntity(player)
+        localDataSource.insertFavoritePlayer(playerEntity)
+    }
+
+    override fun deleteFavoritePlayer(player: Player) {
+        val playerEntity = DataMapper.mapPlayerDomainToEntity(player)
+        appExecutors.diskIO().execute { localDataSource.deleteFavoritePlayer(playerEntity) }
+    }
 }
