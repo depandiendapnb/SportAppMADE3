@@ -8,6 +8,7 @@
     <string name="sport_format">Format : %1$s</string>
     <string name="text_view_information">Text View Information</string>
     <string name="data_empty">Sorry, data is empty or can\'t display now!</string>
+    <string name="player_search">Please search your favorite player!</string>
     <string name="sport_description">Description</string>
     <string name="player_name">Player Name</string>
     <string name="sport_name">Sport : </string>
