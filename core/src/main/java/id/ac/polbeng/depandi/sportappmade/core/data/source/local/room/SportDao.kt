@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
+import id.ac.polbeng.depandi.sportappmade.core.data.source.local.entity.PlayerEntity
 import id.ac.polbeng.depandi.sportappmade.core.data.source.local.entity.SportEntity
 import kotlinx.coroutines.flow.Flow
 
@@ -14,4 +15,7 @@ interface SportDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertListSport(sportList: List<SportEntity>)
+
+    @Query("SELECT * FROM tb_favorite_player")
+    fun getAllFavoritePlayer(): Flow<List<PlayerEntity>>
 }
