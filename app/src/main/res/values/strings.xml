@@ -7,12 +7,25 @@
     <string name="menu_favorite_player">Favorite Player</string>
     <string name="sport_format">Format : %1$s</string>
     <string name="text_view_information">Text View Information</string>
-    <string name="data_empty">Sorry, data is empty or can\'t display now!</string>
+    <string name="data_empty">Sorry… data is empty or can\'t display now!</string>
     <string name="player_search">Please search your favorite player!</string>
     <string name="sport_description">Description</string>
     <string name="player_name">Player Name</string>
     <string name="sport_name">Sport : </string>
     <string name="team">Team :</string>
-    <string name="search_player">Search your favorite player…</string>
+    <string name="search_player">Input player…</string>
     <string name="search">Search</string>
+    <string name="athlete">Sport %1$s</string>
+    <string name="position">Position :</string>
+    <string name="nationality">Nationality :</string>
+    <string name="birth">Birth :</string>
+    <string name="birth_data">%1$s, %2$s</string>
+    <string name="gender">Gender</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="description">Description</string>
+    <string name="facebook">Facebook</string>
+    <string name="twitter">Twitter</string>
+    <string name="instagram">Instagram</string>
+    <string name="favorite_fab">Favorite FAB</string>
 </resources>

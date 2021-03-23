@@ -1,5 +1,6 @@
 package id.ac.polbeng.depandi.sportappmade.ui.player
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -14,6 +15,7 @@ import id.ac.polbeng.depandi.sportappmade.core.domain.model.Player
 import id.ac.polbeng.depandi.sportappmade.core.ui.PlayerAdapter
 import id.ac.polbeng.depandi.sportappmade.core.ui.PlayerFragmentCallback
 import id.ac.polbeng.depandi.sportappmade.databinding.FragmentPlayerBinding
+import id.ac.polbeng.depandi.sportappmade.ui.detail_player.DetailPlayerActivity
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class PlayerFragment : Fragment(), PlayerFragmentCallback {
@@ -99,8 +101,8 @@ class PlayerFragment : Fragment(), PlayerFragmentCallback {
     }
 
     override fun onItemClick(player: Player) {
-        /*val intent = Intent(activity, DetailPlayerActivity::class.java)
+        val intent = Intent(activity, DetailPlayerActivity::class.java)
         intent.putExtra(DetailPlayerActivity.EXTRA_DATA, player)
-        startActivity(intent)*/
+        startActivity(intent)
     }
 }
