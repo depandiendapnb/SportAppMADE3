@@ -1,4 +1,4 @@
-package id.ac.polbeng.depandi.sportappmade.ui.favorite_player
+package id.ac.polbeng.depandi.sportappmade.favorite_player
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData

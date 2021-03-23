@@ -1,4 +1,4 @@
-package id.ac.polbeng.depandi.sportappmade.ui.favorite_player
+package id.ac.polbeng.depandi.sportappmade.favorite_player
 
 import android.content.Intent
 import android.os.Bundle
@@ -11,9 +11,11 @@ import id.ac.polbeng.depandi.sportappmade.R
 import id.ac.polbeng.depandi.sportappmade.core.domain.model.Player
 import id.ac.polbeng.depandi.sportappmade.core.ui.PlayerAdapter
 import id.ac.polbeng.depandi.sportappmade.core.ui.PlayerFragmentCallback
-import id.ac.polbeng.depandi.sportappmade.databinding.FragmentFavoritePlayerBinding
+import id.ac.polbeng.depandi.sportappmade.di.favoritePlayerModule
+import id.ac.polbeng.depandi.sportappmade.favorite_player.databinding.FragmentFavoritePlayerBinding
 import id.ac.polbeng.depandi.sportappmade.ui.detail_player.DetailPlayerActivity
 import org.koin.android.viewmodel.ext.android.viewModel
+import org.koin.core.context.loadKoinModules
 
 class FavoritePlayerFragment : Fragment(), PlayerFragmentCallback {
 
@@ -27,6 +29,7 @@ class FavoritePlayerFragment : Fragment(), PlayerFragmentCallback {
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View {
+        loadKoinModules(favoritePlayerModule)
         _binding = FragmentFavoritePlayerBinding.inflate(inflater, container, false)
         return binding.root
     }

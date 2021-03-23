@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="text_view_information">Text View Information</string>
     <string name="player_name">Player Name</string>
     <string name="sport_name">Sport : </string>
     <string name="team">Team :</string>

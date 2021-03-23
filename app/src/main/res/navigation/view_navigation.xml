@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/view_navigation"
+    app:startDestination="@+id/nav_sport">
+
+    <fragment
+        android:id="@+id/nav_sport"
+        android:name="id.ac.polbeng.depandi.sportappmade.ui.sport.SportFragment"
+        android:label="@string/menu_sport"
+        tools:layout="@layout/fragment_sport" />
+
+    <fragment
+        android:id="@+id/nav_player"
+        android:name="id.ac.polbeng.depandi.sportappmade.ui.player.PlayerFragment"
+        android:label="@string/menu_player"
+        tools:layout="@layout/fragment_player" />
+
+    <fragment
+        android:id="@+id/nav_favorite_player"
+        android:name="id.ac.polbeng.depandi.sportappmade.favorite_player.FavoritePlayerFragment"
+        android:label="@string/menu_favorite_player"
+        tools:layout="@layout/fragment_favorite_player" />
+
+</navigation>

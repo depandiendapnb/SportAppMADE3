@@ -6,7 +6,6 @@
     <string name="menu_player">Player</string>
     <string name="menu_favorite_player">Favorite Player</string>
     <string name="sport_format">Format : %1$s</string>
-    <string name="text_view_information">Text View Information</string>
     <string name="data_empty">Sorry… data is empty or can\'t display now!</string>
     <string name="player_search">Please search your favorite player!</string>
     <string name="sport_description">Description</string>
@@ -28,4 +27,5 @@
     <string name="twitter">Twitter</string>
     <string name="instagram">Instagram</string>
     <string name="favorite_fab">Favorite FAB</string>
+    <string name="title_favorite_player">FavoritePlayer</string>
 </resources>
