@@ -8,6 +8,7 @@ import kotlinx.coroutines.flow.Flow
 
 class SportInteractor(private val sportRepository: ISportRepository): SportUseCase {
     override fun getAllSport(): Flow<Resource<List<Sport>>> = sportRepository.getAllSport()
+    override suspend fun getPlayerByName(name: String): Flow<Resource<List<Player>>> = sportRepository.getPlayerByName(name)
     override fun getAllFavoritePlayer(): Flow<List<Player>> = sportRepository.getAllFavoritePlayer()
     override suspend fun insertFavoritePlayer(player: Player) = sportRepository.insertFavoritePlayer(player)
     override fun deleteFavoritePlayer(player: Player) = sportRepository.deleteFavoritePlayer(player)

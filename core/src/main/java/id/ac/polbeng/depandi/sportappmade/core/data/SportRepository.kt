@@ -39,6 +39,15 @@ class SportRepository(
             }
         }.asFlow()
 
+    override suspend fun getPlayerByName(name: String): Flow<Resource<List<Player>>> =
+            remoteDataSource.getPlayerByName(name).map {
+                when (it) {
+                    is ApiResponse.Success -> Resource.Success(DataMapper.mapPlayerResponseToDomain(it.data))
+                    is ApiResponse.Empty -> Resource.Error(it.toString())
+                    is ApiResponse.Error -> Resource.Error(it.errorMessage)
+                }
+            }
+
     override fun getAllFavoritePlayer(): Flow<List<Player>> =
             localDataSource.getAllFavoritePlayer().map {
                 DataMapper.mapPlayerEntitiesToDomain(it)
