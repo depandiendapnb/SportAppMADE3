@@ -21,10 +21,6 @@ class PlayerFragment : Fragment() {
             savedInstanceState: Bundle?
     ): View? {
         val root = inflater.inflate(R.layout.fragment_player, container, false)
-        val textView: TextView = root.findViewById(R.id.text_gallery)
-        playerViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
         return root
     }
 }

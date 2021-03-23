@@ -9,4 +9,9 @@
     <string name="text_view_information">Text View Information</string>
     <string name="data_empty">Sorry, data is empty or can\'t display now!</string>
     <string name="sport_description">Description</string>
+    <string name="player_name">Player Name</string>
+    <string name="sport_name">Sport : </string>
+    <string name="team">Team :</string>
+    <string name="search_player">Search your favorite player…</string>
+    <string name="search">Search</string>
 </resources>
