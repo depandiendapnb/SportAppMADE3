@@ -12,7 +12,7 @@
     <string name="player_name">Player Name</string>
     <string name="sport_name">Sport : </string>
     <string name="team">Team :</string>
-    <string name="search_player">Input player…</string>
+    <string name="input_player">Input player…</string>
     <string name="search">Search</string>
     <string name="athlete">Sport %1$s</string>
     <string name="position">Position :</string>
