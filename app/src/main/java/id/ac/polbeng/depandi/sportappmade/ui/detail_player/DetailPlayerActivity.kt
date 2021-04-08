@@ -17,7 +17,7 @@ class DetailPlayerActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_DATA = "extra_data"
-        const val DATA_N_A = "N/A"
+        const val DATA_N_A = "Data Not Available"
     }
 
     private val detailPlayerViewModel: DetailPlayerViewModel by viewModel()

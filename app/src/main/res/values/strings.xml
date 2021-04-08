@@ -6,8 +6,10 @@
     <string name="menu_player">Player</string>
     <string name="menu_favorite_player">Favorite Player</string>
     <string name="sport_format">Format : %1$s</string>
-    <string name="data_empty">Sorry… data is empty or can\'t display now!</string>
+    <string name="data_empty">Data is empty!</string>
+    <string name="data_not_display">Sorry… player is not found!</string>
     <string name="player_search">Please search your favorite player!</string>
+    <string name="input_message">Input your search player in text field!</string>
     <string name="sport_description">Description</string>
     <string name="player_name">Player Name</string>
     <string name="sport_name">Sport : </string>

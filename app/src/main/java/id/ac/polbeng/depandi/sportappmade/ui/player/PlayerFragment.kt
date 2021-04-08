@@ -48,7 +48,7 @@ class PlayerFragment : Fragment(), PlayerFragmentCallback {
         binding?.btnSearch?.setOnClickListener {
             val query = binding?.etSearch?.text?.trim().toString()
             if (query == ""){
-                binding?.root?.let { it1 -> Snackbar.make(it1, getString(R.string.player_search), Snackbar.LENGTH_SHORT).show() }
+                binding?.root?.let { it1 -> Snackbar.make(it1, getString(R.string.input_message), Snackbar.LENGTH_SHORT).show() }
                 return@setOnClickListener
             }
             val searchQuery = query.replace(" ", "_")
@@ -65,7 +65,7 @@ class PlayerFragment : Fragment(), PlayerFragmentCallback {
                         }
                         is Resource.Error -> {
                             showLoading(false)
-                            showInfo(true, getString(R.string.data_empty))
+                            showInfo(true, getString(R.string.data_not_display))
                         }
                     }
                 }
