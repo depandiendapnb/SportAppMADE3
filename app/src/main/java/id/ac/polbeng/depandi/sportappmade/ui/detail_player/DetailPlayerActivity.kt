@@ -3,14 +3,13 @@ package id.ac.polbeng.depandi.sportappmade.ui.detail_player
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.content.ContextCompat
+import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import id.ac.polbeng.depandi.sportappmade.R
 import id.ac.polbeng.depandi.sportappmade.core.domain.model.Player
 import id.ac.polbeng.depandi.sportappmade.databinding.ActivityDetailPlayerBinding
 import id.ac.polbeng.depandi.sportappmade.databinding.ContentDetailPlayerBinding
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.koin.android.viewmodel.ext.android.viewModel
 
@@ -73,7 +72,7 @@ class DetailPlayerActivity : AppCompatActivity() {
                 if(isFavoritePlayer){
                     detailPlayerViewModel.deleteFavoritePlayer(player)
                 }else {
-                    CoroutineScope(Dispatchers.Main).launch {
+                    lifecycleScope.launch {
                         detailPlayerViewModel.insertFavoritePlayer(player)
                     }
                 }
