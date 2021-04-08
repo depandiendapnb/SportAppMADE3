@@ -43,69 +43,65 @@
             android:maxLines="2"
             android:textSize="18sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/ll_sport"
+            app:layout_constraintBottom_toTopOf="@+id/textView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/img_thumb"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@string/player_name" />
 
-        <LinearLayout
-            android:id="@+id/ll_sport"
-            android:layout_width="0dp"
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintBottom_toTopOf="@+id/ll_team"
-            app:layout_constraintEnd_toEndOf="parent"
+            android:gravity="start"
+            android:text="@string/sport_name"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/textView2"
+            app:layout_constraintEnd_toStartOf="@+id/tv_sport"
             app:layout_constraintStart_toEndOf="@+id/img_thumb"
-            app:layout_constraintTop_toBottomOf="@+id/tv_player_name"
-            android:orientation="horizontal">
+            app:layout_constraintTop_toBottomOf="@+id/tv_player_name" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/sport_name"
-                android:gravity="start"
-                android:textSize="14sp"/>
-
-            <TextView
-                android:id="@+id/tv_sport"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="start"
-                android:textSize="14sp"
-                android:layout_marginStart="2dp"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/ll_team"
+        <TextView
+            android:id="@+id/tv_sport"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:gravity="start"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_team"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/textView"
+            app:layout_constraintTop_toBottomOf="@+id/tv_player_name" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="start"
+            android:text="@string/team"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tv_team"
+            app:layout_constraintStart_toEndOf="@+id/img_thumb"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/tv_team"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
+            android:gravity="start"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/img_thumb"
-            app:layout_constraintTop_toBottomOf="@+id/ll_sport"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/team"
-                android:gravity="start"
-                android:textSize="14sp"/>
-
-            <TextView
-                android:id="@+id/tv_team"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="start"
-                android:textSize="14sp"
-                android:layout_marginStart="2dp"/>
-        </LinearLayout>
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/textView2"
+            app:layout_constraintTop_toBottomOf="@+id/tv_sport" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
