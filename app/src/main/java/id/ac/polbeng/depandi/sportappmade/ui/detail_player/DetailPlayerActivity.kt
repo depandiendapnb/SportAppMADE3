@@ -17,7 +17,7 @@ class DetailPlayerActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_DATA = "extra_data"
-        const val DATA_N_A = "Data Not Available"
+        const val DATA_N_A = "Data Unavailable"
     }
 
     private val detailPlayerViewModel: DetailPlayerViewModel by viewModel()
@@ -53,21 +53,21 @@ class DetailPlayerActivity : AppCompatActivity() {
                     RequestOptions.placeholderOf(R.drawable.ic_loading).error(R.drawable.ic_error)
                 )
                 .into(binding.imgPoster)
-            val sport = chekNullData(player.strSport)
+            val sport = checkNullData(player.strSport)
             playerContentBinding.tvSport.text = getString(R.string.athlete, sport)
-            playerContentBinding.tvPosition.text = chekNullData(player.strPosition)
-            playerContentBinding.tvTeam.text = chekNullData(player.strTeam)
-            playerContentBinding.tvNationality.text = chekNullData(player.strNationality)
-            val birthLocation = chekNullData(player.strBirthLocation)
-            val dateBorn = chekNullData(player.dateBorn)
+            playerContentBinding.tvPosition.text = checkNullData(player.strPosition)
+            playerContentBinding.tvTeam.text = checkNullData(player.strTeam)
+            playerContentBinding.tvNationality.text = checkNullData(player.strNationality)
+            val birthLocation = checkNullData(player.strBirthLocation)
+            val dateBorn = checkNullData(player.dateBorn)
             playerContentBinding.tvBirth.text = getString(R.string.birth_data, birthLocation, dateBorn)
-            playerContentBinding.tvGender.text = chekNullData(player.strGender)
-            playerContentBinding.tvHeight.text = chekNullData(player.strHeight)
-            playerContentBinding.tvWeight.text = chekNullData(player.strHeight)
-            playerContentBinding.tvDescription.text = chekNullData(player.strDescriptionEN)
-            playerContentBinding.tvFacebook.text = chekNullData(player.strFacebook)
-            playerContentBinding.tvTwitter.text = chekNullData(player.strTwitter)
-            playerContentBinding.tvInstagram.text = chekNullData(player.strInstagram)
+            playerContentBinding.tvGender.text = checkNullData(player.strGender)
+            playerContentBinding.tvHeight.text = checkNullData(player.strHeight)
+            playerContentBinding.tvWeight.text = checkNullData(player.strHeight)
+            playerContentBinding.tvDescription.text = checkNullData(player.strDescriptionEN)
+            playerContentBinding.tvFacebook.text = checkNullData(player.strFacebook)
+            playerContentBinding.tvTwitter.text = checkNullData(player.strTwitter)
+            playerContentBinding.tvInstagram.text = checkNullData(player.strInstagram)
             binding.fab.setOnClickListener {
                 if(isFavoritePlayer){
                     detailPlayerViewModel.deleteFavoritePlayer(player)
@@ -81,11 +81,11 @@ class DetailPlayerActivity : AppCompatActivity() {
         }
     }
 
-    private fun chekNullData(data: String?) : String{
-        if(data == null || data == ""){
-            return DATA_N_A
+    private fun checkNullData(data: String?) : String{
+        return if(data == null || data == ""){
+            DATA_N_A
         }else{
-            return data
+            data
         }
     }
 

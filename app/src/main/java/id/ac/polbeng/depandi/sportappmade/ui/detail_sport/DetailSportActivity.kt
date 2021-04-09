@@ -13,7 +13,7 @@ class DetailSportActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_DATA = "extra_data"
-        const val DATA_N_A = "N/A"
+        const val DATA_N_A = "Data Unavailable"
     }
 
     private lateinit var binding: ActivityDetailSportBinding
@@ -37,13 +37,13 @@ class DetailSportActivity : AppCompatActivity() {
                 .load(sport.strSportThumb)
                 .apply(RequestOptions.placeholderOf(R.drawable.ic_loading).error(R.drawable.ic_error))
                 .into(binding.imgPoster)
-            val format = chekNullData(sport.strFormat)
+            val format = checkNullData(sport.strFormat)
             contentDetail.tvFormat.text = getString(R.string.sport_format, format)
-            contentDetail.tvDescription.text = chekNullData(sport.strSportDescription)
+            contentDetail.tvDescription.text = checkNullData(sport.strSportDescription)
         }
     }
 
-    private fun chekNullData(data: String?) : String{
+    private fun checkNullData(data: String?) : String{
         return if(data == null || data == ""){
             DATA_N_A
         }else{
