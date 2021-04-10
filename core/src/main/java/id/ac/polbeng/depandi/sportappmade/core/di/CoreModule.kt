@@ -8,6 +8,8 @@ import id.ac.polbeng.depandi.sportappmade.core.data.source.remote.RemoteDataSour
 import id.ac.polbeng.depandi.sportappmade.core.data.source.remote.network.ApiService
 import id.ac.polbeng.depandi.sportappmade.core.domain.repository.ISportRepository
 import id.ac.polbeng.depandi.sportappmade.core.utils.AppExecutors
+import net.sqlcipher.database.SQLiteDatabase
+import net.sqlcipher.database.SupportFactory
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -19,10 +21,14 @@ import java.util.concurrent.TimeUnit
 val databaseModule = module {
     factory { get<SportDatabase>().sportDao() }
     single {
+        val passphrase: ByteArray = SQLiteDatabase.getBytes("polbeng".toCharArray())
+        val factory = SupportFactory(passphrase)
         Room.databaseBuilder(
             androidContext(),
             SportDatabase::class.java, "Sport.db"
-        ).fallbackToDestructiveMigration().build()
+        ).fallbackToDestructiveMigration()
+            .openHelperFactory(factory)
+            .build()
     }
 }
 
