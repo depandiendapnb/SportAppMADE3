@@ -18,6 +18,13 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
+        buildConfigField("String" , "DB_NAME" , "\"Sport.db\"")
+        buildConfigField("String" , "DB_PHRASE" , "\"polbeng\"")
+
+        buildConfigField("String" , "BASE_URL" , "\"https://www.thesportsdb.com/api/v1/json/1/\"")
+        buildConfigField("String" , "HOSTNAME" , "\"www.thesportsdb.com\"")
+        buildConfigField("String" , "PIN" , "\"sha256/ctt1haazs8U6LJbBhG1dMDCxflw6Q5LRFqlJP+iCf3E=\"")
     }
 
     buildTypes {
